@@ -35,11 +35,12 @@
 This paper presents a design of mixed signal on step-up converter to boost the input voltage. The step-up converter presented here offers a good efficiency performance. The proposed converter is designed in eSim tool, makerchip and Verilator.
 
 ## Reference Circuit Diagram
-![New Doc 02-28-2022 19 02](https://user-images.githubusercontent.com/43288153/156871589-75ae5d7d-4fbd-4467-a820-e64217985ea2.jpg)
-fig1: schematic diagram of boost converter
+![New Doc 02-28-2022 19 02]![Schematic-diagram-of-Buck-converter]![circuit-of-buck-converter](https://user-images.githubusercontent.com/43288153/163370865-eb20f076-9c63-499f-b790-19e0a11e24ff.jpg)
+
+fig1: schematic diagram of buck-converter
 
 ![New Doc 02-28-2022 22 02_1](https://user-images.githubusercontent.com/43288153/156871644-ca072e83-03f1-4d62-9ae0-27080c7595e8.jpg)
-fig2: circuit diagram of boost converter
+fig2: circuit diagram of buck-converter
 
 ## Reference Waveform
 ![WhatsApp Image 2022-02-28 at 11 25 00 PM](https://user-images.githubusercontent.com/43288153/156871763-776cfdf1-fbde-406c-9a15-04a88ec3c403.jpeg)
@@ -99,9 +100,8 @@ fig6: waveform of stepup converter
 # Mixed Signal based stepup converter
 
 ## Circuit Diagram in eSim
-![sc_test schematic diagram] x-special/nautilus-clipboard
-copy
-file:///home/dilip/Desktop/image.jpg
+
+![buck-converter in eSim]![image](https://user-images.githubusercontent.com/43288153/163365936-f2d27004-0d9a-40ae-9d49-1a7c128015e8.jpg)
 
 fig7: circuit diagram of stepup converter
 ## Verilog Code
@@ -122,7 +122,7 @@ end
 
 // create 80% duty cycle
 
-assign out = (counter<80) ? 1:0; // assign LED to 1 if counter value is less than 80
+assign out = (counter<80) ? 1:0; // assign out to 1 if counter value is less than 80
 endmodule
 
 ```
