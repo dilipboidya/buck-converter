@@ -38,8 +38,7 @@ This paper presents a design of mixed signal on buck converter to step down the 
 
 fig1: schematic diagram of buck-converter
 
-
-![New Doc 02-28-2022 22 02_1](https://user-images.githubusercontent.com/43288153/156871644-ca072e83-03f1-4d62-9ae0-27080c7595e8.jpg)
+![Schematic-diagram-of-Buck-converter](https://user-images.githubusercontent.com/43288153/163419076-c7da3eab-93dd-4d0e-a43a-58436db4fb71.png)
 fig2: circuit diagram of buck-converter
 
 ## Reference Waveform
@@ -110,15 +109,13 @@ U1  pwm plot_v1
 
 ## NgSpice Plot
 
-
-![AC Vin](https://user-images.githubusercontent.com/43288153/163412086-a79b2b65-641c-4495-9638-e9e2fe07083a.png)
-fig6.2: input voltage
-
-![AC clk](https://user-images.githubusercontent.com/43288153/163412245-fcf1b72c-5131-4667-ba8e-04f9b7c21515.png)
-fig6.3: clock
+![AC Vin](https://user-images.githubusercontent.com/43288153/163418531-1917361e-b6c9-4945-83a2-411df9207fa8.png)
+fig6.1: input voltage
+![AC pwm](https://user-images.githubusercontent.com/43288153/163418602-0d8f4529-be76-4e57-a1d8-0cca12d2e5c9.png)
+fig6.2: PWM signal
 
 ![AC Vout](https://user-images.githubusercontent.com/43288153/163411944-01c48ec4-b672-4407-89b1-69e05a9728a4.png)
-fig6.1: waveform of stepup converter
+fig6.3: waveform of stepup converter
 
 
 # Mixed Signal based stepup converter
