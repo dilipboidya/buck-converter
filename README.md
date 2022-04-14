@@ -1,7 +1,7 @@
 # Mixed Signal Based Buck-Converter
 
 
-## Boost Converter or stepdown converter
+## Buck Converter or Stepdown Converter
 
 - [Abstract](#abstract)
 - [Reference Circuit Diagram](#reference-circuit-diagram)
@@ -125,7 +125,7 @@ fig6.1: waveform of stepup converter
 
 ## Circuit Diagram in eSim
 
-![buck-converter in eSim]![image](https://user-images.githubusercontent.com/43288153/163365936-f2d27004-0d9a-40ae-9d49-1a7c128015e8.jpg)
+![MSD ckt diagram](https://user-images.githubusercontent.com/43288153/163416011-24ae9606-841f-4bb0-8062-ee768b99c6e6.png)
 
 fig7: circuit diagram of stepup converter
 ## Verilog Code
@@ -197,20 +197,43 @@ endmodule
 fig9: makerchip plot
 
 ## Netlists
-![mixed signal netlists](https://user-images.githubusercontent.com/43288153/157677916-e29f6a6b-2971-45b7-a70b-c8fa5b9caea2.jpg)
-fig10: netlists
+
+```
+* /home/dilip/eSim-Workspace/Mixed_Signal_Based_Buck_Converter/Mixed_Signal_Based_Buck_Converter.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: Thu Apr 14 19:44:45 2022
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+Q1  Vin Net-_Q1-Pad2_ Net-_D1-Pad2_ eSim_NPN		
+L1  Net-_D1-Pad2_ Vout 1		
+D1  GND Net-_D1-Pad2_ eSim_Diode		
+C1  Vout GND 10n		
+R1  Vout GND 10k		
+v2  Vin GND DC		
+U6  Vout plot_v1		
+U4  Vin plot_v1		
+v1  clk GND pulse		
+U3  clk Net-_U1-Pad1_ adc_bridge_1		
+U5  Net-_U1-Pad2_ Net-_Q1-Pad2_ dac_bridge_1		
+U2  clk plot_v1		
+U1  Net-_U1-Pad1_ Net-_U1-Pad2_ pwm		
+
+.end
+
+```
 
 ## NgSpice Plots
-![Vin waveform](https://user-images.githubusercontent.com/43288153/163387845-f81488de-89ae-4270-97c9-4d044575f3d4.png)
-
+![MSD Vin](https://user-images.githubusercontent.com/43288153/163416180-bec525a8-fc74-4583-af39-bcd93bcd4a74.png)
 fig11: input voltage
 
-(![Vout waveform](https://user-images.githubusercontent.com/43288153/163387760-187c17a4-98b3-4780-8c72-496cbc6b4105.png)
+![MSD Vout](https://user-images.githubusercontent.com/43288153/163416304-a3f8dd3f-c192-4ab7-b41e-54935ee142ed.png)
 fig12: output voltage
 
-
-![pwm wave](https://user-images.githubusercontent.com/43288153/163387987-adb7ec1f-7610-4378-af81-6d9b39bc8fb0.png)
-fig13: pwm waveform
+![MSD clk](https://user-images.githubusercontent.com/43288153/163416597-f4d48494-82bd-4e10-9b28-40b54bdb23b8.png)
+fig13: clock
 
 
 
