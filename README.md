@@ -24,37 +24,33 @@
   * [Makerchip Plots](#makerchip-plots)
   * [Netlists](#netlists)
   * [NgSpice Plots](#ngspice-plots)
-  * [GAW Plots](#gaw-plots) 
   
- - [Steps to run generate NgVeri Model](#steps-to-run-generate-ngveri-model)
+- [Steps to run generate NgVeri Model](#steps-to-run-generate-ngveri-model)
 - [Steps to run this project](#steps-to-run-this-project)
 - [Acknowlegdements](#acknowlegdements)
 - [References](#references)
 
 ## Abstract
-This paper presents a design of mixed signal on step-up converter to boost the input voltage. The step-up converter presented here offers a good efficiency performance. The proposed converter is designed in eSim tool, makerchip and Verilator.
+This paper presents a design of mixed signal on buck converter to step down the input voltage. The step-down converter presented here offers a good efficiency performance. The proposed converter is designed in eSim tool.
 
 ## Reference Circuit Diagram
-![New Doc 02-28-2022 19 02]![Schematic-diagram-of-Buck-converter]![circuit-of-buck-converter](https://user-images.githubusercontent.com/43288153/163370865-eb20f076-9c63-499f-b790-19e0a11e24ff.jpg)
+![circuit-of-buck-converter](https://user-images.githubusercontent.com/43288153/163370865-eb20f076-9c63-499f-b790-19e0a11e24ff.jpg)
 
 fig1: schematic diagram of buck-converter
+
 
 ![New Doc 02-28-2022 22 02_1](https://user-images.githubusercontent.com/43288153/156871644-ca072e83-03f1-4d62-9ae0-27080c7595e8.jpg)
 fig2: circuit diagram of buck-converter
 
 ## Reference Waveform
-![WhatsApp Image 2022-02-28 at 11 25 00 PM](https://user-images.githubusercontent.com/43288153/156871763-776cfdf1-fbde-406c-9a15-04a88ec3c403.jpeg)
+![Reference waveform](https://user-images.githubusercontent.com/43288153/163389443-c79e4f64-fbdc-4ba5-9f81-1ae77dea5bf6.png)
+
 fig3: waveform
 ## Circuit Details
-A step-up converter is also known as boost
-converter, as the name suggests it steps up the input voltage to higher voltage, since the power is always conserved therefore the current in the output is lower than the input current and thus power is conserved. A typical step-up converter consists of a switch (transistor) and a diode as a semiconductor device, and storing element: inductor and a capacitor, the former is to store electrical energy in the form of magnetic energy and the later is to smooth the output voltage i.e., to filter out the ripple.
-The working principle of the step-up converter can
-be explained as follows
-1) When the transistor is ON state, current starts
-flowing through the inductor stores electric energy by generating magnetic field around it. 
-2) When the transistor is turned OFF, inductor will
-pump out its stored energy through the diode and current will start flowing through it[2]. At higher switching speed inductor will not be able
-to discharge fully in between charging stages which as a result, a voltage higher than the input voltage will be developed at its output. Using Verilog the PWM signal can be generated to drive the gate of the transistor, thus a mixed signal design.
+A step-down converter is also known as buck converter, as the name suggests it steps down the input voltage to lower voltage, since the power is always conserved therefore the current in the output is higher than the input current and thus power is conserved. A typical step-down converter consists of a switch (transistor) and a diode as a semiconductor device, and storing element: inductor and a capacitor, the former is used to store electrical energy in the form of magnetic energy and the later is to smooth the output voltage i.e., to filter out the ripple.
+The working principle of the step-down converter can be explained as follows-
+1) When the transistor is ON state, current starts flowing through the inductor stores electric energy by generating magnetic field around it and since capacitor  therefore, charge will be stored and the voltage across it will appear across the load. 
+2) When the transistor is turned OFF, inductor will pump out its stored energy tand current will start flowing[2].The current will flow until the stored energy in the inductor collapsed during this period diode will be in forward bias and thus allow current to flow through it. Using Verilog the PWM signal can be generated to drive the gate of the transistor, thus a mixed signal design can be accomplished easily.
 
 # Software Used
 ## eSim
@@ -120,9 +116,9 @@ always @ (posedge clk) begin
 	else counter <=0;// reset counter
 end
 
-// create 80% duty cycle
+// create 50% duty cycle
 
-assign out = (counter<80) ? 1:0; // assign out to 1 if counter value is less than 80
+assign out = (counter<50) ? 1:0; // assign out to 1 if counter value is less than 50
 endmodule
 
 ```
@@ -148,9 +144,9 @@ always @ (posedge clk) begin
 	else counter <=0;// reset counter
 end
 
-// create 80% duty cycle
+// create 50% duty cycle
 
-assign out = (counter<80) ? 1:0; // assign LED to 1 if counter value is less than 80
+assign out = (counter<50) ? 1:0; // assign out to 1 if counter value is less than 50
 endmodule
 
 
@@ -168,7 +164,7 @@ endmodule
 ```
 
 ## Makerchip Plots
-![makerchip plot] ![makerchip plot](https://user-images.githubusercontent.com/43288153/163364298-fa350f92-010e-4b50-8a03-c480967b580b.png)
+![makerchip plot](https://user-images.githubusercontent.com/43288153/163364298-fa350f92-010e-4b50-8a03-c480967b580b.png)
 
 fig9: makerchip plot
 
@@ -177,15 +173,18 @@ fig9: makerchip plot
 fig10: netlists
 
 ## NgSpice Plots
-![Vin](https://user-images.githubusercontent.com/43288153/157678106-845a1bfc-7473-4942-b1da-57ea92a8cd80.jpg)
+![Vin waveform](https://user-images.githubusercontent.com/43288153/163387845-f81488de-89ae-4270-97c9-4d044575f3d4.png)
+
 fig11: input voltage
 
-![Vout](https://user-images.githubusercontent.com/43288153/157678268-646f999d-6118-4dc1-bb18-9ccea4df3586.jpg)
+(![Vout waveform](https://user-images.githubusercontent.com/43288153/163387760-187c17a4-98b3-4780-8c72-496cbc6b4105.png)
 fig12: output voltage
 
-## GAW Plots
-![GAW output](https://user-images.githubusercontent.com/43288153/157678382-5974b37d-45bc-4bee-b269-0f2b562c8ba0.jpg)
-fig13: GAW plots
+
+![pwm wave](https://user-images.githubusercontent.com/43288153/163387987-adb7ec1f-7610-4378-af81-6d9b39bc8fb0.png)
+fig13: pwm waveform
+
+
 
 ## Steps to run generate NgVeri Model
 1. Open eSim
