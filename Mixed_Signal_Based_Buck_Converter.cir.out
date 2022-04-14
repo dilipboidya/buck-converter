@@ -1,0 +1,38 @@
+* /home/dilip/esim-workspace/mixed_signal_based_buck_converter/mixed_signal_based_buck_converter.cir
+
+.include NPN.lib
+.include schottky.lib
+q1 vin net-_q1-pad2_ net-_d1-pad2_ Q2N2222
+l1  net-_d1-pad2_ vout 1
+d1 gnd net-_d1-pad2_ 1N5819
+c1  vout gnd 10n
+r1  vout gnd 10k
+v2 vin gnd  dc 25
+* u6  vout plot_v1
+* u4  vin plot_v1
+v1  clk gnd pulse(0 5 0 1n 1n 2u 2u)
+* u3  clk net-_u1-pad1_ adc_bridge_1
+* u5  net-_u1-pad2_ net-_q1-pad2_ dac_bridge_1
+* u2  clk plot_v1
+* u1  net-_u1-pad1_ net-_u1-pad2_ pwm
+a1 [clk ] [net-_u1-pad1_ ] u3
+a2 [net-_u1-pad2_ ] [net-_q1-pad2_ ] u5
+a3 [net-_u1-pad1_ ] [net-_u1-pad2_ ] u1
+* Schematic Name:                             adc_bridge_1, NgSpice Name: adc_bridge
+.model u3 adc_bridge(in_low=1.0 in_high=2.0 rise_delay=1.0e-9 fall_delay=1.0e-9 ) 
+* Schematic Name:                             dac_bridge_1, NgSpice Name: dac_bridge
+.model u5 dac_bridge(out_low=0.0 out_high=5.0 out_undef=0.5 input_load=1.0e-12 t_rise=1.0e-9 t_fall=1.0e-9 ) 
+* Schematic Name:                             pwm, NgSpice Name: pwm
+.model u1 pwm(rise_delay=1.0e-9 fall_delay=1.0e-9 input_load=1.0e-12 instance_id=1 ) 
+.tran 0.3e-03 3e-03 0e-03
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot v(vout)
+plot v(vin)
+plot v(clk)
+.endc
+.end
