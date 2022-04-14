@@ -1,0 +1,20 @@
+* /home/dilip/eSim-Workspace/buck_converter/buck_converter.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: Thu Apr 14 19:40:20 2022
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+D1  GND Net-_D1-Pad2_ eSim_Diode		
+L1  Net-_D1-Pad2_ Vout 1		
+C1  Vout GND 10n		
+R1  Vout GND 10k		
+Q1  Vin pwm Net-_D1-Pad2_ eSim_NPN		
+v2  Vin GND DC		
+v1  pwm GND pulse		
+U3  Vout plot_v1		
+U2  Vin plot_v1		
+U1  pwm plot_v1		
+
+.end

@@ -1,0 +1,67 @@
+
+No compatibility mode selected!
+
+
+Circuit: * /home/dilip/esim-workspace/buck_converter/buck_converter.cir
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Warning: v1: no DC value, transient time 0 value used
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+net-_d1-pad2_                      1.76198e-10
+vout                               1.76198e-10
+vin                                         25
+pwm                                          0
+l1#branch                          1.76198e-14
+v1#branch                          2.50024e-11
+v2#branch                         -5.00222e-11
+
+
+No. of Data Rows : 234412
+ERROR: (internal)  This operation is not defined for display type PrinterOnly.
+Can't open viewport for graphics.
+ERROR: (internal)  This operation is not defined for display type PrinterOnly.
+Can't open viewport for graphics.
+ERROR: (internal)  This operation is not defined for display type PrinterOnly.
+Can't open viewport for graphics.
+binary raw file "/home/dilip/eSim-Workspace/buck_converter/buck_converter.raw"
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Warning: v1: no DC value, transient time 0 value used
+No. of Data Columns : 9  
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+net-_d1-pad2_                      1.76198e-10
+vout                               1.76198e-10
+vin                                         25
+pwm                                          0
+l1#branch                          1.76198e-14
+v1#branch                          2.50024e-11
+v2#branch                         -5.00222e-11
+
+
+No. of Data Rows : 234412
+
+Total analysis time (seconds) = 9.94818
+
+Total CPU time (seconds) = 16.611 
+
+Total DRAM available = 3836.711 MB.
+DRAM currently available =  198.594 MB.
+Maximum ngspice program size =   48.414 MB.
+Current ngspice program size =   31.930 MB.
+
+Shared ngspice pages =    8.766 MB.
+Text (code) pages =    4.953 MB.
+Stack = 0 bytes.
+Library pages =   23.516 MB.
+
