@@ -78,20 +78,48 @@ https://www.veripool.org/verilator/
 ## Schematic Diagram 
 NOTE: For switching purpose a BJT is used, however a power n-channel MOSFET can also be used for that a model file must be created in eSim beforehand
 
+![Final AC CKT Diagram](https://user-images.githubusercontent.com/43288153/163411627-104e6724-8520-45c8-a697-9583e9f88439.png)
 
-![analog schematic diagram of sc](https://user-images.githubusercontent.com/43288153/157669728-ca62d6e3-4640-4d27-83ae-712b604af607.jpg)
 
-fig4: schematic diagram of stepup converter
+fig4: schematic diagram of stepdown converter
 
 ## Netlists
 
-![netlists of analog sc](https://user-images.githubusercontent.com/43288153/157676669-dbc47ade-28f6-4121-b2b2-f040410aeb6e.jpg)
+```
+* /home/dilip/eSim-Workspace/buck_converter/buck_converter.cir
 
-fig5: netlists
+* EESchema Netlist Version 1.1 (Spice format) creation date: Thu Apr 14 19:40:20 2022
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+D1  GND Net-_D1-Pad2_ eSim_Diode		
+L1  Net-_D1-Pad2_ Vout 1		
+C1  Vout GND 10n		
+R1  Vout GND 10k		
+Q1  Vin pwm Net-_D1-Pad2_ eSim_NPN		
+v2  Vin GND DC		
+v1  pwm GND pulse		
+U3  Vout plot_v1		
+U2  Vin plot_v1		
+U1  pwm plot_v1		
+
+.end
+```
 
 ## NgSpice Plot
-![analog sc waveform](https://user-images.githubusercontent.com/43288153/157670957-ebefb7b5-2044-4ad9-8fcc-c5ce2466d3a1.jpg)
-fig6: waveform of stepup converter
+
+
+![AC Vin](https://user-images.githubusercontent.com/43288153/163412086-a79b2b65-641c-4495-9638-e9e2fe07083a.png)
+fig6.2: input voltage
+
+![AC clk](https://user-images.githubusercontent.com/43288153/163412245-fcf1b72c-5131-4667-ba8e-04f9b7c21515.png)
+fig6.3: clock
+
+![AC Vout](https://user-images.githubusercontent.com/43288153/163411944-01c48ec4-b672-4407-89b1-69e05a9728a4.png)
+fig6.1: waveform of stepup converter
+
 
 # Mixed Signal based stepup converter
 
@@ -211,10 +239,8 @@ fig13: pwm waveform
 ## Acknowlegdements
 1. FOSSEE, IIT Bombay
 2. Steve Hoover, Founder, Redwood EDA
-4. Sumanto Kar, eSim Team, FOSSEE
+3. Sumanto Kar, eSim Team, FOSSEE
 
 ## References
-1. Jaber Abu-Qahouq and Issa Batarseh, "Generalized Analysis of Soft-Switching DC-DC Converters", ISCAS 2000 - IEEE International Symposium on Circuits and Systems, May 2831, 2000, Geneva, Switzerland, pp. 507-510.
-2. M. Ghanbari and S. M. Hosseini, "DC/DC boost converter design and development based on asynchronously paralleled switches," 2008 IEEE International Conference on Industrial Technology, 2008, pp. 1-5, doi: 10.1109/ICIT.2008.4608713.
-3. Eric Coates, "Boost Converter,Boost converter Operation" https://learnabout-electronics.org/PSU/psu32.php [accessed Feb. 28 2022]
-4. 
+1. S. Masri, N. Mohamad and M. H. M. Hariri, "Design and development of DC-DC buck converter for photovoltaic application," 2012 International Conference on Power Engineering and Renewable Energy (ICPERE), 2012, pp. 1-5, doi: 10.1109/ICPERE.2012.6287236.
+2. Electronicscoach, "What is buck converter?" https://electronicscoach.com/buck-converter.html [accessed April. 14 2022]]
