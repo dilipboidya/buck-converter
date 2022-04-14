@@ -99,7 +99,10 @@ fig6: waveform of stepup converter
 # Mixed Signal based stepup converter
 
 ## Circuit Diagram in eSim
-![sc_test schematic diagram](https://user-images.githubusercontent.com/43288153/157671378-5e195dab-eff9-4975-92c4-b032d48cb705.jpg)
+![sc_test schematic diagram] x-special/nautilus-clipboard
+copy
+file:///home/dilip/Desktop/image.jpg
+
 fig7: circuit diagram of stepup converter
 ## Verilog Code
 ![verilog code](https://user-images.githubusercontent.com/43288153/157676196-54c1dbf3-7a58-4311-b8fa-3750b56d2950.jpg)
@@ -111,7 +114,8 @@ fig8: verilog code
 ```
 
 ## Makerchip Plots
-![makerchip plot](https://user-images.githubusercontent.com/43288153/157675141-15fbd795-b4ac-49f7-aff4-80c1f454fc0c.jpg)
+![makerchip plot] ![makerchip plot](https://user-images.githubusercontent.com/43288153/163364298-fa350f92-010e-4b50-8a03-c480967b580b.png)
+
 fig9: makerchip plot
 
 ## Netlists
