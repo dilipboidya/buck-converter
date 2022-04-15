@@ -249,9 +249,9 @@ fig13: clock
 2. Clone this project using the following command:</br>
 ```git clone https:///github.com/dilipboidya/buck-converter.git ```</br>
 3. Change directory:</br>
-```cd eSim_project_files/sc_test```</br>
+```cd MSD_BC/Mixed_Signal_Based_Buck_Converter```</br>
 4. Run NgSpice:</br>
-```ngspice sc_test.cir.out```</br>
+```ngspice Mixed_Signal_Based_Buck_Converter.cir.out```</br>
 5.  To run this project in eSim:
 -  Run  eSim</br>
 -  Load the project</br>
