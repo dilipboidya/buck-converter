@@ -1,0 +1,26 @@
+* /home/dilip/esim-workspace/buck_converter/buck_converter.cir
+
+.include NPN.lib
+.include schottky.lib
+d1 gnd net-_d1-pad2_ 1N5819
+l1  net-_d1-pad2_ vout 1
+c1  vout gnd 10n
+r1  vout gnd 10k
+q1 vin pwm net-_d1-pad2_ Q2N2222
+v2 vin gnd  dc 25
+v1  pwm gnd pulse(0 5 0 1n 1n 0.5u 1u)
+* u3  vout plot_v1
+* u2  vin plot_v1
+* u1  pwm plot_v1
+.tran 1e-03 5e-03 0e-03
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot v(vout)
+plot v(vin)
+plot v(pwm)
+.endc
+.end
