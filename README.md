@@ -115,16 +115,16 @@ fig6.1: input voltage
 fig6.2: PWM signal
 
 ![AC Vout](https://user-images.githubusercontent.com/43288153/163411944-01c48ec4-b672-4407-89b1-69e05a9728a4.png)
-fig6.3: waveform of stepup converter
+fig6.3: waveform of buck converter
 
 
-# Mixed Signal based stepup converter
+# Mixed Signal based buck converter
 
 ## Circuit Diagram in eSim
 
 ![MSD ckt diagram](https://user-images.githubusercontent.com/43288153/163416011-24ae9606-841f-4bb0-8062-ee768b99c6e6.png)
 
-fig7: circuit diagram of stepup converter
+fig7: circuit diagram of buck converter
 ## Verilog Code
 ```
  `timescale 1ns / 1ps
