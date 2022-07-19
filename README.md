@@ -52,7 +52,7 @@ The working principle of the step-down converter can be explained as follows-
 2) When the transistor is turned OFF, inductor will pump out its stored energy tand current will start flowing[2].The current will flow until the stored energy in the inductor collapsed during this period diode will be in forward bias and thus allow current to flow through it. Using Verilog the PWM signal can be generated to drive the gate of the transistor, thus a mixed signal design can be accomplished easily.
 
 # Software Used
-## eSim
+### eSim
 It is an open source Electronics Design Automation by FOSSEE, IIT Bombay. It is made using NgSpice and Kicad.
 More at:
 </br>
